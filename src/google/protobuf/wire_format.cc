@@ -50,7 +50,7 @@
 
 
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace internal {
 
@@ -1098,4 +1098,4 @@ void WireFormat::VerifyUTF8StringFallback(const char* data,
 
 }  // namespace internal
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

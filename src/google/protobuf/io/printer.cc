@@ -36,7 +36,7 @@
 #include <google/protobuf/io/zero_copy_stream.h>
 #include <google/protobuf/stubs/common.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace io {
 
@@ -195,4 +195,4 @@ void Printer::WriteRaw(const char* data, int size) {
 
 }  // namespace io
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

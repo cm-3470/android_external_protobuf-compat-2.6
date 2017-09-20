@@ -43,7 +43,7 @@
 #define PROTOBUF_HAS_DEATH_TEST
 #endif
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 // When running unittests, get the directory containing the source code.
@@ -97,6 +97,6 @@ class ScopedMemoryLog {
 };
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle
 
 #endif  // GOOGLE_PROTOBUF_GOOGLETEST_H__

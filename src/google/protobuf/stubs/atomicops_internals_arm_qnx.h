@@ -36,7 +36,7 @@
 // For _smp_cmpxchg()
 #include <pthread.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace internal {
 
@@ -141,6 +141,6 @@ inline Atomic32 Release_Load(volatile const Atomic32* ptr) {
 
 }  // namespace internal
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle
 
 #endif  // GOOGLE_PROTOBUF_ATOMICOPS_INTERNALS_ARM_QNX_H_

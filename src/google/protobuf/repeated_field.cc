@@ -37,7 +37,7 @@
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/stubs/common.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 namespace internal {
@@ -84,4 +84,4 @@ void StringTypeHandlerBase::Delete(string* value) {
 
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

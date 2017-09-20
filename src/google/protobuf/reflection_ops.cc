@@ -41,7 +41,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include <google/protobuf/stubs/strutil.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace internal {
 
@@ -266,4 +266,4 @@ void ReflectionOps::FindInitializationErrors(
 
 }  // namespace internal
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

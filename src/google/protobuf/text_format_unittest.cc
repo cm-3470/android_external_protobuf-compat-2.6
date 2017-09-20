@@ -50,7 +50,7 @@
 #include <google/protobuf/stubs/strutil.h>
 #include <google/protobuf/stubs/substitute.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 // Can't use an anonymous namespace here due to brokenness of Tru64 compiler.
@@ -1476,4 +1476,4 @@ TEST_F(TextFormatMessageSetTest, Deserialize) {
 
 }  // namespace text_format_unittest
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

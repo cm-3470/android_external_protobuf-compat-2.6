@@ -58,12 +58,12 @@
 #include <google/protobuf/generated_message_util.h>
 #include <google/protobuf/message_lite.h>
 
-namespace google {
+namespace gxxgle {
 
 namespace upb {
-namespace google_opensource {
+namespace gxxgle_opensource {
 class GMR_Handlers;
-}  // namespace google_opensource
+}  // namespace gxxgle_opensource
 }  // namespace upb
 
 namespace protobuf {
@@ -264,7 +264,7 @@ class LIBPROTOBUF_EXPORT RepeatedPtrFieldBase {
 
   // To parse directly into a proto2 generated class, the upb class GMR_Handlers
   // needs to be able to modify a RepeatedPtrFieldBase directly.
-  friend class LIBPROTOBUF_EXPORT upb::google_opensource::GMR_Handlers;
+  friend class LIBPROTOBUF_EXPORT upb::gxxgle_opensource::GMR_Handlers;
 
   RepeatedPtrFieldBase();
 
@@ -411,7 +411,7 @@ class LIBPROTOBUF_EXPORT StringTypeHandlerBase {
   static void Clear(string* value) { value->clear(); }
   static void Merge(const string& from, string* to) { *to = from; }
   static const Type& default_instance() {
-    return ::google::protobuf::internal::GetEmptyString();
+    return ::gxxgle::protobuf::internal::GetEmptyString();
   }
 };
 
@@ -808,7 +808,7 @@ void RepeatedField<Element>::Reserve(int new_size) {
   if (total_size_ >= new_size) return;
 
   Element* old_elements = elements_;
-  total_size_ = max(google::protobuf::internal::kMinRepeatedFieldAllocationSize,
+  total_size_ = max(gxxgle::protobuf::internal::kMinRepeatedFieldAllocationSize,
                     max(total_size_ * 2, new_size));
   elements_ = new Element[total_size_];
   if (old_elements != NULL) {
@@ -1474,7 +1474,7 @@ RepeatedPtrField<Element>::pointer_end() const {
 // for RepeatedField and RepatedPtrField. Typical usage would be:
 //
 //   std::copy(some_sequence.begin(), some_sequence.end(),
-//             google::protobuf::RepeatedFieldBackInserter(proto.mutable_sequence()));
+//             gxxgle::protobuf::RepeatedFieldBackInserter(proto.mutable_sequence()));
 //
 // Ported by johannes from util/gtl/proto-array-iterators.h
 
@@ -1600,5 +1600,5 @@ AllocatedRepeatedPtrFieldBackInserter(
 
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_REPEATED_FIELD_H__

@@ -78,13 +78,13 @@ class C {
   int n_;
 };
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace internal {
 template<> struct has_trivial_copy<C> : true_type { };
 }  // namespace internal
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle
 
 // Another user-defined non-POD type with a trivial assignment operator.
 // We will explicitly declare C to have a trivial assignment operator
@@ -96,13 +96,13 @@ class D {
   int n_;
 };
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace internal {
 template<> struct has_trivial_assign<D> : true_type { };
 }  // namespace internal
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle
 
 // Another user-defined non-POD type with a trivial constructor.
 // We will explicitly declare E to have a trivial constructor
@@ -112,13 +112,13 @@ class E {
   int n_;
 };
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace internal {
 template<> struct has_trivial_constructor<E> : true_type { };
 }  // namespace internal
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle
 
 // Another user-defined non-POD type with a trivial destructor.
 // We will explicitly declare E to have a trivial destructor
@@ -130,13 +130,13 @@ class F {
   int n_;
 };
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace internal {
 template<> struct has_trivial_destructor<F> : true_type { };
 }  // namespace internal
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle
 
 enum G {};
 
@@ -152,7 +152,7 @@ class J {
   operator int() const;
 };
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace internal {
 namespace {
@@ -625,4 +625,4 @@ TEST(TypeTraitsTest, TestConvertible) {
 }  // anonymous namespace
 }  // namespace internal
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

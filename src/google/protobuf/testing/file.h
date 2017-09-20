@@ -36,7 +36,7 @@
 
 #include <google/protobuf/stubs/common.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 const int DEFAULT_FILE_MODE = 0777;
@@ -92,6 +92,6 @@ class File {
 };
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle
 
 #endif  // GOOGLE_PROTOBUF_TESTING_FILE_H__

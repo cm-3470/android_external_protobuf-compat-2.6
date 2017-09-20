@@ -61,7 +61,7 @@
 
 #undef PACKAGE  // autoheader #defines this.  :(
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 const FieldDescriptor::CppType
@@ -975,7 +975,7 @@ static void InitGeneratedPool() {
 }
 
 inline void InitGeneratedPoolOnce() {
-  ::google::protobuf::GoogleOnceInit(&generated_pool_init_, &InitGeneratedPool);
+  ::gxxgle::protobuf::GoogleOnceInit(&generated_pool_init_, &InitGeneratedPool);
 }
 
 }  // anonymous namespace
@@ -5088,7 +5088,7 @@ bool DescriptorBuilder::OptionInterpreter::SetOptionValue(
                              option_field->full_name() + "\".");
       }
       unknown_fields->AddFixed32(option_field->number(),
-          google::protobuf::internal::WireFormatLite::EncodeFloat(value));
+          gxxgle::protobuf::internal::WireFormatLite::EncodeFloat(value));
       break;
     }
 
@@ -5105,7 +5105,7 @@ bool DescriptorBuilder::OptionInterpreter::SetOptionValue(
                              option_field->full_name() + "\".");
       }
       unknown_fields->AddFixed64(option_field->number(),
-          google::protobuf::internal::WireFormatLite::EncodeDouble(value));
+          gxxgle::protobuf::internal::WireFormatLite::EncodeDouble(value));
       break;
     }
 
@@ -5317,7 +5317,7 @@ void DescriptorBuilder::OptionInterpreter::SetInt32(int number, int32 value,
 
     case FieldDescriptor::TYPE_SINT32:
       unknown_fields->AddVarint(number,
-          google::protobuf::internal::WireFormatLite::ZigZagEncode32(value));
+          gxxgle::protobuf::internal::WireFormatLite::ZigZagEncode32(value));
       break;
 
     default:
@@ -5339,7 +5339,7 @@ void DescriptorBuilder::OptionInterpreter::SetInt64(int number, int64 value,
 
     case FieldDescriptor::TYPE_SINT64:
       unknown_fields->AddVarint(number,
-          google::protobuf::internal::WireFormatLite::ZigZagEncode64(value));
+          gxxgle::protobuf::internal::WireFormatLite::ZigZagEncode64(value));
       break;
 
     default:
@@ -5417,4 +5417,4 @@ void DescriptorBuilder::LogUnusedDependency(const FileDescriptor* result) {
 }
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

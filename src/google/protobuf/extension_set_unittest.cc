@@ -49,7 +49,7 @@
 #include <gtest/gtest.h>
 #include <google/protobuf/stubs/stl_util.h>
 
-namespace google {
+namespace gxxgle {
 
 namespace protobuf {
 namespace internal {
@@ -1092,4 +1092,4 @@ TEST(ExtensionSetTest, DynamicExtensions) {
 }  // namespace
 }  // namespace internal
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

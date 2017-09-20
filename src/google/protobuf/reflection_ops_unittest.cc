@@ -42,7 +42,7 @@
 #include <gtest/gtest.h>
 #include <google/protobuf/stubs/strutil.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace internal {
 namespace {
@@ -472,4 +472,4 @@ TEST(ReflectionOpsTest, FindOneofInitializationErrors) {
 }  // namespace
 }  // namespace internal
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

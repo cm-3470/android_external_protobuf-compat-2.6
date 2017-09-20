@@ -35,7 +35,7 @@
 #ifndef GOOGLE_PROTOBUF_IO_STRTOD_H__
 #define GOOGLE_PROTOBUF_IO_STRTOD_H__
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace io {
 
@@ -46,5 +46,5 @@ double NoLocaleStrtod(const char* str, char** endptr);
 }  // namespace io
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_IO_STRTOD_H__

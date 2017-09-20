@@ -82,7 +82,7 @@ inline BOOL GetMessage(
 
 namespace std {}
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 #undef GOOGLE_DISALLOW_EVIL_CONSTRUCTORS
@@ -147,7 +147,7 @@ std::string LIBPROTOBUF_EXPORT VersionString(int version);
 // matches the headers you compiled against.  If a version mismatch is
 // detected, the process will abort.
 #define GOOGLE_PROTOBUF_VERIFY_VERSION                                    \
-  ::google::protobuf::internal::VerifyVersion(                            \
+  ::gxxgle::protobuf::internal::VerifyVersion(                            \
     GOOGLE_PROTOBUF_VERSION, GOOGLE_PROTOBUF_MIN_LIBRARY_VERSION,         \
     __FILE__)
 
@@ -378,7 +378,7 @@ struct CompileAssert {
 
 #undef GOOGLE_COMPILE_ASSERT
 #define GOOGLE_COMPILE_ASSERT(expr, msg) \
-  typedef ::google::protobuf::internal::CompileAssert<(bool(expr))> \
+  typedef ::gxxgle::protobuf::internal::CompileAssert<(bool(expr))> \
           msg[bool(expr) ? 1 : -1]
 
 
@@ -704,9 +704,9 @@ class LIBPROTOBUF_EXPORT LogFinisher {
 #undef GOOGLE_DCHECK_GE
 
 #define GOOGLE_LOG(LEVEL)                                                 \
-  ::google::protobuf::internal::LogFinisher() =                           \
-    ::google::protobuf::internal::LogMessage(                             \
-      ::google::protobuf::LOGLEVEL_##LEVEL, __FILE__, __LINE__)
+  ::gxxgle::protobuf::internal::LogFinisher() =                           \
+    ::gxxgle::protobuf::internal::LogMessage(                             \
+      ::gxxgle::protobuf::LOGLEVEL_##LEVEL, __FILE__, __LINE__)
 #define GOOGLE_LOG_IF(LEVEL, CONDITION) \
   !(CONDITION) ? (void)0 : GOOGLE_LOG(LEVEL)
 
@@ -1221,6 +1221,6 @@ class FatalException : public std::exception {
 using namespace std;  // Don't do this at home, kids.
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle
 
 #endif  // GOOGLE_PROTOBUF_COMMON_H__

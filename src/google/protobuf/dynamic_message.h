@@ -43,7 +43,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/stubs/common.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 // Defined in other files.
@@ -144,5 +144,5 @@ class LIBPROTOBUF_EXPORT DynamicMessageFactory : public MessageFactory {
 
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_DYNAMIC_MESSAGE_H__

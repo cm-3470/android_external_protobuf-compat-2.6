@@ -45,7 +45,7 @@
 #include <string>
 
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 class Message;
@@ -104,5 +104,5 @@ class LIBPROTOC_EXPORT Subprocess {
 }  // namespace compiler
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_COMPILER_SUBPROCESS_H__

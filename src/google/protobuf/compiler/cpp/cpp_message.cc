@@ -555,11 +555,11 @@ GenerateClassDefinition(io::Printer* printer) {
 
   if (UseUnknownFieldSet(descriptor_->file())) {
     printer->Print(
-      "inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {\n"
+      "inline const ::gxxgle::protobuf::UnknownFieldSet& unknown_fields() const {\n"
       "  return _unknown_fields_;\n"
       "}\n"
       "\n"
-      "inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {\n"
+      "inline ::gxxgle::protobuf::UnknownFieldSet* mutable_unknown_fields() {\n"
       "  return &_unknown_fields_;\n"
       "}\n"
       "\n");
@@ -579,7 +579,7 @@ GenerateClassDefinition(io::Printer* printer) {
   if (HasDescriptorMethods(descriptor_->file()) &&
       !descriptor_->options().no_standard_descriptor_accessor()) {
     printer->Print(vars,
-      "static const ::google::protobuf::Descriptor* descriptor();\n");
+      "static const ::gxxgle::protobuf::Descriptor* descriptor();\n");
   }
 
   printer->Print(vars,
@@ -638,11 +638,11 @@ GenerateClassDefinition(io::Printer* printer) {
   if (HasGeneratedMethods(descriptor_->file())) {
     if (HasDescriptorMethods(descriptor_->file())) {
       printer->Print(vars,
-        "void CopyFrom(const ::google::protobuf::Message& from);\n"
-        "void MergeFrom(const ::google::protobuf::Message& from);\n");
+        "void CopyFrom(const ::gxxgle::protobuf::Message& from);\n"
+        "void MergeFrom(const ::gxxgle::protobuf::Message& from);\n");
     } else {
       printer->Print(vars,
-        "void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from);\n");
+        "void CheckTypeAndMergeFrom(const ::gxxgle::protobuf::MessageLite& from);\n");
     }
 
     printer->Print(vars,
@@ -653,9 +653,9 @@ GenerateClassDefinition(io::Printer* printer) {
       "\n"
       "int ByteSize() const;\n"
       "bool MergePartialFromCodedStream(\n"
-      "    ::google::protobuf::io::CodedInputStream* input);\n"
+      "    ::gxxgle::protobuf::io::CodedInputStream* input);\n"
       "void SerializeWithCachedSizes(\n"
-      "    ::google::protobuf::io::CodedOutputStream* output) const;\n");
+      "    ::gxxgle::protobuf::io::CodedOutputStream* output) const;\n");
     // DiscardUnknownFields() is implemented in message.cc using reflections. We
     // need to implement this function in generated code for messages.
     if (!UseUnknownFieldSet(descriptor_->file())) {
@@ -664,7 +664,7 @@ GenerateClassDefinition(io::Printer* printer) {
     }
     if (HasFastArraySerialization(descriptor_->file())) {
       printer->Print(
-        "::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;\n");
+        "::gxxgle::protobuf::uint8* SerializeWithCachedSizesToArray(::gxxgle::protobuf::uint8* output) const;\n");
     }
   }
 
@@ -703,7 +703,7 @@ GenerateClassDefinition(io::Printer* printer) {
 
   if (HasDescriptorMethods(descriptor_->file())) {
     printer->Print(
-      "::google::protobuf::Metadata GetMetadata() const;\n"
+      "::gxxgle::protobuf::Metadata GetMetadata() const;\n"
       "\n");
   } else {
     printer->Print(
@@ -797,7 +797,7 @@ GenerateClassDefinition(io::Printer* printer) {
     sizeof_has_bits = 4;
   }
   const string has_bits_decl = sizeof_has_bits == 0 ? "" :
-      "::google::protobuf::uint32 _has_bits_[" + SimpleItoa(sizeof_has_bits / 4) + "];\n";
+      "::gxxgle::protobuf::uint32 _has_bits_[" + SimpleItoa(sizeof_has_bits / 4) + "];\n";
 
 
   // To minimize padding, data members are divided into three sections:
@@ -810,13 +810,13 @@ GenerateClassDefinition(io::Printer* printer) {
 
   if (descriptor_->extension_range_count() > 0) {
     printer->Print(
-      "::google::protobuf::internal::ExtensionSet _extensions_;\n"
+      "::gxxgle::protobuf::internal::ExtensionSet _extensions_;\n"
       "\n");
   }
 
   if (UseUnknownFieldSet(descriptor_->file())) {
     printer->Print(
-      "::google::protobuf::UnknownFieldSet _unknown_fields_;\n"
+      "::gxxgle::protobuf::UnknownFieldSet _unknown_fields_;\n"
       "\n");
   } else {
     printer->Print(
@@ -899,7 +899,7 @@ GenerateClassDefinition(io::Printer* printer) {
   // Generate _oneof_case_.
   if (descriptor_->oneof_decl_count() > 0) {
     printer->Print(vars,
-      "::google::protobuf::uint32 _oneof_case_[$oneof_decl_count$];\n"
+      "::gxxgle::protobuf::uint32 _oneof_case_[$oneof_decl_count$];\n"
       "\n");
   }
 
@@ -966,8 +966,8 @@ GenerateInlineMethods(io::Printer* printer) {
 void MessageGenerator::
 GenerateDescriptorDeclarations(io::Printer* printer) {
   printer->Print(
-    "const ::google::protobuf::Descriptor* $name$_descriptor_ = NULL;\n"
-    "const ::google::protobuf::internal::GeneratedMessageReflection*\n"
+    "const ::gxxgle::protobuf::Descriptor* $name$_descriptor_ = NULL;\n"
+    "const ::gxxgle::protobuf::internal::GeneratedMessageReflection*\n"
     "  $name$_reflection_ = NULL;\n",
     "name", classname_);
 
@@ -996,7 +996,7 @@ GenerateDescriptorDeclarations(io::Printer* printer) {
 
   for (int i = 0; i < descriptor_->enum_type_count(); i++) {
     printer->Print(
-      "const ::google::protobuf::EnumDescriptor* $name$_descriptor_ = NULL;\n",
+      "const ::gxxgle::protobuf::EnumDescriptor* $name$_descriptor_ = NULL;\n",
       "name", ClassName(descriptor_->enum_type(i), false));
   }
 }
@@ -1026,7 +1026,7 @@ GenerateDescriptorInitializer(io::Printer* printer, int index) {
   // Construct the reflection object.
   printer->Print(vars,
     "$classname$_reflection_ =\n"
-    "  new ::google::protobuf::internal::GeneratedMessageReflection(\n"
+    "  new ::gxxgle::protobuf::internal::GeneratedMessageReflection(\n"
     "    $classname$_descriptor_,\n"
     "    $classname$::default_instance_,\n"
     "    $classname$_offsets_,\n"
@@ -1051,9 +1051,9 @@ GenerateDescriptorInitializer(io::Printer* printer, int index) {
   }
 
   printer->Print(
-    "    ::google::protobuf::DescriptorPool::generated_pool(),\n");
+    "    ::gxxgle::protobuf::DescriptorPool::generated_pool(),\n");
   printer->Print(vars,
-    "    ::google::protobuf::MessageFactory::generated_factory(),\n");
+    "    ::gxxgle::protobuf::MessageFactory::generated_factory(),\n");
   printer->Print(vars,
     "    sizeof($classname$));\n");
 
@@ -1071,7 +1071,7 @@ void MessageGenerator::
 GenerateTypeRegistrations(io::Printer* printer) {
   // Register this message type with the message factory.
   printer->Print(
-    "::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(\n"
+    "::gxxgle::protobuf::MessageFactory::InternalRegisterGeneratedMessage(\n"
     "  $classname$_descriptor_, &$classname$::default_instance());\n",
     "classname", classname_);
 
@@ -1235,9 +1235,9 @@ GenerateClassMethods(io::Printer* printer) {
 
   if (HasDescriptorMethods(descriptor_->file())) {
     printer->Print(
-      "::google::protobuf::Metadata $classname$::GetMetadata() const {\n"
+      "::gxxgle::protobuf::Metadata $classname$::GetMetadata() const {\n"
       "  protobuf_AssignDescriptorsOnce();\n"
-      "  ::google::protobuf::Metadata metadata;\n"
+      "  ::gxxgle::protobuf::Metadata metadata;\n"
       "  metadata.descriptor = $classname$_descriptor_;\n"
       "  metadata.reflection = $classname$_reflection_;\n"
       "  return metadata;\n"
@@ -1302,7 +1302,7 @@ GenerateSharedConstructorCode(io::Printer* printer) {
   printer->Indent();
 
   printer->Print(StrCat(
-      uses_string_ ? "::google::protobuf::internal::GetEmptyString();\n" : "",
+      uses_string_ ? "::gxxgle::protobuf::internal::GetEmptyString();\n" : "",
       "_cached_size_ = 0;\n").c_str());
 
   for (int i = 0; i < descriptor_->field_count(); i++) {
@@ -1480,7 +1480,7 @@ GenerateStructors(io::Printer* printer) {
   if (HasDescriptorMethods(descriptor_->file()) &&
       !descriptor_->options().no_standard_descriptor_accessor()) {
     printer->Print(
-      "const ::google::protobuf::Descriptor* $classname$::descriptor() {\n"
+      "const ::gxxgle::protobuf::Descriptor* $classname$::descriptor() {\n"
       "  protobuf_AssignDescriptorsOnce();\n"
       "  return $classname$_descriptor_;\n"
       "}\n"
@@ -1799,7 +1799,7 @@ GenerateMergeFrom(io::Printer* printer) {
     // Generate the generalized MergeFrom (aka that which takes in the Message
     // base class as a parameter).
     printer->Print(
-      "void $classname$::MergeFrom(const ::google::protobuf::Message& from) {\n"
+      "void $classname$::MergeFrom(const ::gxxgle::protobuf::Message& from) {\n"
       "  GOOGLE_CHECK_NE(&from, this);\n",
       "classname", classname_);
     printer->Indent();
@@ -1810,10 +1810,10 @@ GenerateMergeFrom(io::Printer* printer) {
     // for each message.
     printer->Print(
       "const $classname$* source =\n"
-      "  ::google::protobuf::internal::dynamic_cast_if_available<const $classname$*>(\n"
+      "  ::gxxgle::protobuf::internal::dynamic_cast_if_available<const $classname$*>(\n"
       "    &from);\n"
       "if (source == NULL) {\n"
-      "  ::google::protobuf::internal::ReflectionOps::Merge(from, this);\n"
+      "  ::gxxgle::protobuf::internal::ReflectionOps::Merge(from, this);\n"
       "} else {\n"
       "  MergeFrom(*source);\n"
       "}\n",
@@ -1825,8 +1825,8 @@ GenerateMergeFrom(io::Printer* printer) {
     // Generate CheckTypeAndMergeFrom().
     printer->Print(
       "void $classname$::CheckTypeAndMergeFrom(\n"
-      "    const ::google::protobuf::MessageLite& from) {\n"
-      "  MergeFrom(*::google::protobuf::down_cast<const $classname$*>(&from));\n"
+      "    const ::gxxgle::protobuf::MessageLite& from) {\n"
+      "  MergeFrom(*::gxxgle::protobuf::down_cast<const $classname$*>(&from));\n"
       "}\n"
       "\n",
       "classname", classname_);
@@ -1939,7 +1939,7 @@ GenerateCopyFrom(io::Printer* printer) {
     // Generate the generalized CopyFrom (aka that which takes in the Message
     // base class as a parameter).
     printer->Print(
-      "void $classname$::CopyFrom(const ::google::protobuf::Message& from) {\n",
+      "void $classname$::CopyFrom(const ::gxxgle::protobuf::Message& from) {\n",
       "classname", classname_);
     printer->Indent();
 
@@ -1973,7 +1973,7 @@ GenerateMergeFromCodedStream(io::Printer* printer) {
     // Special-case MessageSet.
     printer->Print(
       "bool $classname$::MergePartialFromCodedStream(\n"
-      "    ::google::protobuf::io::CodedInputStream* input) {\n",
+      "    ::gxxgle::protobuf::io::CodedInputStream* input) {\n",
       "classname", classname_);
 
     PrintHandlingOptionalStaticInitializers(
@@ -1994,16 +1994,16 @@ GenerateMergeFromCodedStream(io::Printer* printer) {
 
   printer->Print(
     "bool $classname$::MergePartialFromCodedStream(\n"
-    "    ::google::protobuf::io::CodedInputStream* input) {\n"
+    "    ::gxxgle::protobuf::io::CodedInputStream* input) {\n"
     "#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure\n"
-    "  ::google::protobuf::uint32 tag;\n",
+    "  ::gxxgle::protobuf::uint32 tag;\n",
     "classname", classname_);
 
   if (!UseUnknownFieldSet(descriptor_->file())) {
     printer->Print(
-      "  ::google::protobuf::io::StringOutputStream unknown_fields_string(\n"
+      "  ::gxxgle::protobuf::io::StringOutputStream unknown_fields_string(\n"
       "      mutable_unknown_fields());\n"
-      "  ::google::protobuf::io::CodedOutputStream unknown_fields_stream(\n"
+      "  ::gxxgle::protobuf::io::CodedOutputStream unknown_fields_stream(\n"
       "      &unknown_fields_string);\n");
   }
 
@@ -2021,7 +2021,7 @@ GenerateMergeFromCodedStream(io::Printer* printer) {
       WireFormat::MakeTag(ordered_fields[descriptor_->field_count() - 1]);
   const int kCutoff0 = 127;               // fits in 1-byte varint
   const int kCutoff1 = (127 << 7) + 127;  // fits in 2-byte varint
-  printer->Print("::std::pair< ::google::protobuf::uint32, bool> p = "
+  printer->Print("::std::pair< ::gxxgle::protobuf::uint32, bool> p = "
                  "input->ReadTagWithCutoff($max$);\n"
                  "tag = p.first;\n"
                  "if (!p.second) goto handle_unusual;\n",
@@ -2037,7 +2037,7 @@ GenerateMergeFromCodedStream(io::Printer* printer) {
     // of each case.  However, this is actually a bit slower in practice as it
     // creates a jump table that is 8x larger and sparser, and meanwhile the
     // if()s are highly predictable.
-    printer->Print("switch (::google::protobuf::internal::WireFormatLite::"
+    printer->Print("switch (::gxxgle::protobuf::internal::WireFormatLite::"
                    "GetTagFieldNumber(tag)) {\n");
 
     printer->Indent();
@@ -2140,8 +2140,8 @@ GenerateMergeFromCodedStream(io::Printer* printer) {
   // If tag is 0 or an end-group tag then this must be the end of the message.
   printer->Print(
     "if (tag == 0 ||\n"
-    "    ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==\n"
-    "    ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {\n"
+    "    ::gxxgle::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==\n"
+    "    ::gxxgle::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {\n"
     "  goto success;\n"
     "}\n");
 
@@ -2198,11 +2198,11 @@ GenerateMergeFromCodedStream(io::Printer* printer) {
   // We really don't recognize this tag.  Skip it.
   if (UseUnknownFieldSet(descriptor_->file())) {
     printer->Print(
-      "DO_(::google::protobuf::internal::WireFormat::SkipField(\n"
+      "DO_(::gxxgle::protobuf::internal::WireFormat::SkipField(\n"
       "      input, tag, mutable_unknown_fields()));\n");
   } else {
     printer->Print(
-      "DO_(::google::protobuf::internal::WireFormatLite::SkipField(\n"
+      "DO_(::gxxgle::protobuf::internal::WireFormatLite::SkipField(\n"
       "    input, tag, &unknown_fields_stream));\n");
   }
 
@@ -2278,12 +2278,12 @@ GenerateSerializeWithCachedSizes(io::Printer* printer) {
     // Special-case MessageSet.
     printer->Print(
       "void $classname$::SerializeWithCachedSizes(\n"
-      "    ::google::protobuf::io::CodedOutputStream* output) const {\n"
+      "    ::gxxgle::protobuf::io::CodedOutputStream* output) const {\n"
       "  _extensions_.SerializeMessageSetWithCachedSizes(output);\n",
       "classname", classname_);
     GOOGLE_CHECK(UseUnknownFieldSet(descriptor_->file()));
     printer->Print(
-      "  ::google::protobuf::internal::WireFormat::SerializeUnknownMessageSetItems(\n"
+      "  ::gxxgle::protobuf::internal::WireFormat::SerializeUnknownMessageSetItems(\n"
       "      unknown_fields(), output);\n");
     printer->Print(
       "}\n");
@@ -2292,7 +2292,7 @@ GenerateSerializeWithCachedSizes(io::Printer* printer) {
 
   printer->Print(
     "void $classname$::SerializeWithCachedSizes(\n"
-    "    ::google::protobuf::io::CodedOutputStream* output) const {\n",
+    "    ::gxxgle::protobuf::io::CodedOutputStream* output) const {\n",
     "classname", classname_);
   printer->Indent();
 
@@ -2316,14 +2316,14 @@ GenerateSerializeWithCachedSizesToArray(io::Printer* printer) {
   if (descriptor_->options().message_set_wire_format()) {
     // Special-case MessageSet.
     printer->Print(
-      "::google::protobuf::uint8* $classname$::SerializeWithCachedSizesToArray(\n"
-      "    ::google::protobuf::uint8* target) const {\n"
+      "::gxxgle::protobuf::uint8* $classname$::SerializeWithCachedSizesToArray(\n"
+      "    ::gxxgle::protobuf::uint8* target) const {\n"
       "  target =\n"
       "      _extensions_.SerializeMessageSetWithCachedSizesToArray(target);\n",
       "classname", classname_);
     GOOGLE_CHECK(UseUnknownFieldSet(descriptor_->file()));
     printer->Print(
-      "  target = ::google::protobuf::internal::WireFormat::\n"
+      "  target = ::gxxgle::protobuf::internal::WireFormat::\n"
       "             SerializeUnknownMessageSetItemsToArray(\n"
       "               unknown_fields(), target);\n");
     printer->Print(
@@ -2333,8 +2333,8 @@ GenerateSerializeWithCachedSizesToArray(io::Printer* printer) {
   }
 
   printer->Print(
-    "::google::protobuf::uint8* $classname$::SerializeWithCachedSizesToArray(\n"
-    "    ::google::protobuf::uint8* target) const {\n",
+    "::gxxgle::protobuf::uint8* $classname$::SerializeWithCachedSizesToArray(\n"
+    "    ::gxxgle::protobuf::uint8* target) const {\n",
     "classname", classname_);
   printer->Indent();
 
@@ -2392,11 +2392,11 @@ GenerateSerializeWithCachedSizesBody(io::Printer* printer, bool to_array) {
     if (to_array) {
       printer->Print(
         "target = "
-            "::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(\n"
+            "::gxxgle::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(\n"
         "    unknown_fields(), target);\n");
     } else {
       printer->Print(
-        "::google::protobuf::internal::WireFormat::SerializeUnknownFields(\n"
+        "::gxxgle::protobuf::internal::WireFormat::SerializeUnknownFields(\n"
         "    unknown_fields(), output);\n");
     }
     printer->Outdent();
@@ -2420,7 +2420,7 @@ GenerateByteSize(io::Printer* printer) {
       "classname", classname_);
     GOOGLE_CHECK(UseUnknownFieldSet(descriptor_->file()));
     printer->Print(
-      "  total_size += ::google::protobuf::internal::WireFormat::\n"
+      "  total_size += ::gxxgle::protobuf::internal::WireFormat::\n"
       "      ComputeUnknownMessageSetItemsSize(unknown_fields());\n");
     printer->Print(
       "  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();\n"
@@ -2537,7 +2537,7 @@ GenerateByteSize(io::Printer* printer) {
     printer->Indent();
     printer->Print(
       "total_size +=\n"
-      "  ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(\n"
+      "  ::gxxgle::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(\n"
       "    unknown_fields());\n");
     printer->Outdent();
     printer->Print("}\n");
@@ -2602,12 +2602,12 @@ GenerateIsInitialized(io::Printer* printer) {
         HasRequiredFields(field->message_type())) {
       if (field->is_repeated()) {
         printer->Print(
-          "if (!::google::protobuf::internal::AllAreInitialized(this->$name$()))"
+          "if (!::gxxgle::protobuf::internal::AllAreInitialized(this->$name$()))"
           " return false;\n",
           "name", FieldName(field));
       } else {
         if (field->options().weak()) {
-          // For weak fields, use the data member (google::protobuf::Message*) instead
+          // For weak fields, use the data member (gxxgle::protobuf::Message*) instead
           // of the getter to avoid a link dependency on the weak message type
           // which is only forward declared.
           printer->Print(

@@ -46,7 +46,7 @@
 #endif
 #include <errno.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 #ifdef _WIN32
@@ -191,4 +191,4 @@ void File::DeleteRecursively(const string& name,
 }
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

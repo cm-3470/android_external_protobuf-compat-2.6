@@ -42,7 +42,7 @@
 #include <google/protobuf/io/zero_copy_stream.h>
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace internal {
 
@@ -287,7 +287,7 @@ bool WireFormatLite::ReadPackedEnumNoInline(io::CodedInputStream* input,
   io::CodedInputStream::Limit limit = input->PushLimit(length);
   while (input->BytesUntilLimit() > 0) {
     int value;
-    if (!google::protobuf::internal::WireFormatLite::ReadPrimitive<
+    if (!gxxgle::protobuf::internal::WireFormatLite::ReadPrimitive<
         int, WireFormatLite::TYPE_ENUM>(input, &value)) {
       return false;
     }
@@ -468,4 +468,4 @@ bool WireFormatLite::ReadBytes(io::CodedInputStream* input,
 
 }  // namespace internal
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

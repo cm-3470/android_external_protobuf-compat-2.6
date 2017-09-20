@@ -36,7 +36,7 @@
 
 #include <google/protobuf/stubs/common.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace io {
 
@@ -54,4 +54,4 @@ bool ZeroCopyOutputStream::WriteAliasedRaw(const void* /* data */,
 
 }  // namespace io
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

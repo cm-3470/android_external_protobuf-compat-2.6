@@ -115,8 +115,8 @@ void ExtensionGenerator::GenerateDeclaration(io::Printer* printer) {
 
   printer->Print(vars,
     "static const int $constant_name$ = $number$;\n"
-    "$qualifier$ ::google::protobuf::internal::ExtensionIdentifier< $extendee$,\n"
-    "    ::google::protobuf::internal::$type_traits$, $field_type$, $packed$ >\n"
+    "$qualifier$ ::gxxgle::protobuf::internal::ExtensionIdentifier< $extendee$,\n"
+    "    ::gxxgle::protobuf::internal::$type_traits$, $field_type$, $packed$ >\n"
     "  $name$;\n"
     );
 
@@ -161,8 +161,8 @@ void ExtensionGenerator::GenerateDefinition(io::Printer* printer) {
   }
 
   printer->Print(vars,
-    "::google::protobuf::internal::ExtensionIdentifier< $extendee$,\n"
-    "    ::google::protobuf::internal::$type_traits$, $field_type$, $packed$ >\n"
+    "::gxxgle::protobuf::internal::ExtensionIdentifier< $extendee$,\n"
+    "    ::gxxgle::protobuf::internal::$type_traits$, $field_type$, $packed$ >\n"
     "  $name$($constant_name$, $default$);\n");
 }
 
@@ -179,7 +179,7 @@ void ExtensionGenerator::GenerateRegistration(io::Printer* printer) {
   switch (descriptor_->cpp_type()) {
     case FieldDescriptor::CPPTYPE_ENUM:
       printer->Print(vars,
-        "::google::protobuf::internal::ExtensionSet::RegisterEnumExtension(\n"
+        "::gxxgle::protobuf::internal::ExtensionSet::RegisterEnumExtension(\n"
         "  &$extendee$::default_instance(),\n"
         "  $number$, $field_type$, $is_repeated$, $is_packed$,\n");
       printer->Print(
@@ -188,7 +188,7 @@ void ExtensionGenerator::GenerateRegistration(io::Printer* printer) {
       break;
     case FieldDescriptor::CPPTYPE_MESSAGE:
       printer->Print(vars,
-        "::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(\n"
+        "::gxxgle::protobuf::internal::ExtensionSet::RegisterMessageExtension(\n"
         "  &$extendee$::default_instance(),\n"
         "  $number$, $field_type$, $is_repeated$, $is_packed$,\n");
       printer->Print(
@@ -197,7 +197,7 @@ void ExtensionGenerator::GenerateRegistration(io::Printer* printer) {
       break;
     default:
       printer->Print(vars,
-        "::google::protobuf::internal::ExtensionSet::RegisterExtension(\n"
+        "::gxxgle::protobuf::internal::ExtensionSet::RegisterExtension(\n"
         "  &$extendee$::default_instance(),\n"
         "  $number$, $field_type$, $is_repeated$, $is_packed$);\n");
       break;

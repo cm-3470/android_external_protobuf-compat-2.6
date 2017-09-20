@@ -41,7 +41,7 @@
 #include <google/protobuf/wire_format.h>
 #include <google/protobuf/stubs/stl_util.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 UnknownFieldSet::UnknownFieldSet()
@@ -262,4 +262,4 @@ uint8* UnknownField::SerializeLengthDelimitedNoTagToArray(uint8* target) const {
 }
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

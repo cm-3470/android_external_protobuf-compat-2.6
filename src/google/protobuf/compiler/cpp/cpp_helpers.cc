@@ -163,7 +163,7 @@ string ClassName(const EnumDescriptor* enum_descriptor, bool qualified) {
 
 string SuperClassName(const Descriptor* descriptor) {
   return HasDescriptorMethods(descriptor->file()) ?
-      "::google::protobuf::Message" : "::google::protobuf::MessageLite";
+      "::gxxgle::protobuf::Message" : "::gxxgle::protobuf::MessageLite";
 }
 
 string FieldName(const FieldDescriptor* field) {
@@ -207,10 +207,10 @@ string StripProto(const string& filename) {
 
 const char* PrimitiveTypeName(FieldDescriptor::CppType type) {
   switch (type) {
-    case FieldDescriptor::CPPTYPE_INT32  : return "::google::protobuf::int32";
-    case FieldDescriptor::CPPTYPE_INT64  : return "::google::protobuf::int64";
-    case FieldDescriptor::CPPTYPE_UINT32 : return "::google::protobuf::uint32";
-    case FieldDescriptor::CPPTYPE_UINT64 : return "::google::protobuf::uint64";
+    case FieldDescriptor::CPPTYPE_INT32  : return "::gxxgle::protobuf::int32";
+    case FieldDescriptor::CPPTYPE_INT64  : return "::gxxgle::protobuf::int64";
+    case FieldDescriptor::CPPTYPE_UINT32 : return "::gxxgle::protobuf::uint32";
+    case FieldDescriptor::CPPTYPE_UINT64 : return "::gxxgle::protobuf::uint64";
     case FieldDescriptor::CPPTYPE_DOUBLE : return "double";
     case FieldDescriptor::CPPTYPE_FLOAT  : return "float";
     case FieldDescriptor::CPPTYPE_BOOL   : return "bool";
@@ -290,11 +290,11 @@ string DefaultValue(const FieldDescriptor* field) {
     case FieldDescriptor::CPPTYPE_DOUBLE: {
       double value = field->default_value_double();
       if (value == numeric_limits<double>::infinity()) {
-        return "::google::protobuf::internal::Infinity()";
+        return "::gxxgle::protobuf::internal::Infinity()";
       } else if (value == -numeric_limits<double>::infinity()) {
-        return "-::google::protobuf::internal::Infinity()";
+        return "-::gxxgle::protobuf::internal::Infinity()";
       } else if (value != value) {
-        return "::google::protobuf::internal::NaN()";
+        return "::gxxgle::protobuf::internal::NaN()";
       } else {
         return SimpleDtoa(value);
       }
@@ -303,11 +303,11 @@ string DefaultValue(const FieldDescriptor* field) {
       {
         float value = field->default_value_float();
         if (value == numeric_limits<float>::infinity()) {
-          return "static_cast<float>(::google::protobuf::internal::Infinity())";
+          return "static_cast<float>(::gxxgle::protobuf::internal::Infinity())";
         } else if (value == -numeric_limits<float>::infinity()) {
-          return "static_cast<float>(-::google::protobuf::internal::Infinity())";
+          return "static_cast<float>(-::gxxgle::protobuf::internal::Infinity())";
         } else if (value != value) {
-          return "static_cast<float>(::google::protobuf::internal::NaN())";
+          return "static_cast<float>(::gxxgle::protobuf::internal::NaN())";
         } else {
           string float_value = SimpleFtoa(value);
           // If floating point value contains a period (.) or an exponent

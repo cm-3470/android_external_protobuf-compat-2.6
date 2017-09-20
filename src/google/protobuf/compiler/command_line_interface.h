@@ -45,7 +45,7 @@
 #include <set>
 #include <utility>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 class Descriptor;            // descriptor.h
@@ -69,10 +69,10 @@ class DiskSourceTree;       // importer.h
 // then write a main() procedure like this:
 //
 //   int main(int argc, char* argv[]) {
-//     google::protobuf::compiler::CommandLineInterface cli;
+//     gxxgle::protobuf::compiler::CommandLineInterface cli;
 //
 //     // Support generation of C++ source and headers.
-//     google::protobuf::compiler::cpp::CppGenerator cpp_generator;
+//     gxxgle::protobuf::compiler::cpp::CppGenerator cpp_generator;
 //     cli.RegisterGenerator("--cpp_out", &cpp_generator,
 //       "Generate C++ source and header.");
 //
@@ -374,5 +374,5 @@ class LIBPROTOC_EXPORT CommandLineInterface {
 }  // namespace compiler
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_COMPILER_COMMAND_LINE_INTERFACE_H__

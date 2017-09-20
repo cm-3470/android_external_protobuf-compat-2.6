@@ -49,7 +49,7 @@
 #include <iostream>
 #include <fstream>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 #ifdef _WIN32
@@ -252,4 +252,4 @@ struct ForceShutdown {
 }  // namespace
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

@@ -44,7 +44,7 @@
 #include <google/protobuf/stubs/once.h>
 
 #include <google/protobuf/stubs/common.h>
-namespace google {
+namespace gxxgle {
 
 namespace protobuf {
 namespace internal {
@@ -81,7 +81,7 @@ LIBPROTOBUF_EXPORT inline const ::std::string& GetEmptyStringAlreadyInited() {
   return *empty_string_;
 }
 LIBPROTOBUF_EXPORT inline const ::std::string& GetEmptyString() {
-  ::google::protobuf::GoogleOnceInit(&empty_string_once_init_, &InitEmptyString);
+  ::gxxgle::protobuf::GoogleOnceInit(&empty_string_once_init_, &InitEmptyString);
   return GetEmptyStringAlreadyInited();
 }
 
@@ -109,5 +109,5 @@ template <class Type> bool AllAreInitialized(const Type& t) {
 }  // namespace internal
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_GENERATED_MESSAGE_UTIL_H__

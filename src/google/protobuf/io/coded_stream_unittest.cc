@@ -51,7 +51,7 @@
 #undef ULL
 #define ULL(x) GOOGLE_ULONGLONG(x)
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace io {
 namespace {
@@ -1375,4 +1375,4 @@ TEST_F(CodedStreamTest, InputOver2G) {
 }  // namespace
 }  // namespace io
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

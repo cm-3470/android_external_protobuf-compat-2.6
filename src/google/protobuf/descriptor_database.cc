@@ -42,7 +42,7 @@
 #include <google/protobuf/stubs/stl_util.h>
 #include <google/protobuf/stubs/map_util.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 DescriptorDatabase::~DescriptorDatabase() {}
@@ -540,4 +540,4 @@ bool MergedDescriptorDatabase::FindAllExtensionNumbers(
 
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

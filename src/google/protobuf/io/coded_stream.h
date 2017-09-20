@@ -130,7 +130,7 @@
 #include <google/protobuf/stubs/common.h>
 
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 class DescriptorPool;
@@ -1216,5 +1216,5 @@ inline bool CodedInputStream::IsFlat() const {
   #pragma runtime_checks("c", restore)
 #endif  // _MSC_VER
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_IO_CODED_STREAM_H__

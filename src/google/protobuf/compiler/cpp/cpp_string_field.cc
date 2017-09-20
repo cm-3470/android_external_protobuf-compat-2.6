@@ -53,7 +53,7 @@ void SetStringVariables(const FieldDescriptor* descriptor,
   (*variables)["default_length"] =
       SimpleItoa(descriptor->default_value_string().length());
   (*variables)["default_variable"] = descriptor->default_value_string().empty()
-      ? "&::google::protobuf::internal::GetEmptyStringAlreadyInited()"
+      ? "&::gxxgle::protobuf::internal::GetEmptyStringAlreadyInited()"
       : "_default_" + FieldName(descriptor) + "_";
   (*variables)["pointer_type"] =
       descriptor->type() == FieldDescriptor::TYPE_BYTES ? "void" : "char";
@@ -274,14 +274,14 @@ GenerateShutdownCode(io::Printer* printer) const {
 void StringFieldGenerator::
 GenerateMergeFromCodedStream(io::Printer* printer) const {
   printer->Print(variables_,
-    "DO_(::google::protobuf::internal::WireFormatLite::Read$declared_type$(\n"
+    "DO_(::gxxgle::protobuf::internal::WireFormatLite::Read$declared_type$(\n"
     "      input, this->mutable_$name$()));\n");
   if (HasUtf8Verification(descriptor_->file()) &&
       descriptor_->type() == FieldDescriptor::TYPE_STRING) {
     printer->Print(variables_,
-      "::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
+      "::gxxgle::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
       "  this->$name$().data(), this->$name$().length(),\n"
-      "  ::google::protobuf::internal::WireFormat::PARSE,\n"
+      "  ::gxxgle::protobuf::internal::WireFormat::PARSE,\n"
       "  \"$name$\");\n");
   }
 }
@@ -291,13 +291,13 @@ GenerateSerializeWithCachedSizes(io::Printer* printer) const {
   if (HasUtf8Verification(descriptor_->file()) &&
       descriptor_->type() == FieldDescriptor::TYPE_STRING) {
     printer->Print(variables_,
-      "::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
+      "::gxxgle::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
       "  this->$name$().data(), this->$name$().length(),\n"
-      "  ::google::protobuf::internal::WireFormat::SERIALIZE,\n"
+      "  ::gxxgle::protobuf::internal::WireFormat::SERIALIZE,\n"
       "  \"$name$\");\n");
   }
   printer->Print(variables_,
-    "::google::protobuf::internal::WireFormatLite::Write$declared_type$MaybeAliased(\n"
+    "::gxxgle::protobuf::internal::WireFormatLite::Write$declared_type$MaybeAliased(\n"
     "  $number$, this->$name$(), output);\n");
 }
 
@@ -306,14 +306,14 @@ GenerateSerializeWithCachedSizesToArray(io::Printer* printer) const {
   if (HasUtf8Verification(descriptor_->file()) &&
       descriptor_->type() == FieldDescriptor::TYPE_STRING) {
     printer->Print(variables_,
-      "::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
+      "::gxxgle::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
       "  this->$name$().data(), this->$name$().length(),\n"
-      "  ::google::protobuf::internal::WireFormat::SERIALIZE,\n"
+      "  ::gxxgle::protobuf::internal::WireFormat::SERIALIZE,\n"
       "  \"$name$\");\n");
   }
   printer->Print(variables_,
     "target =\n"
-    "  ::google::protobuf::internal::WireFormatLite::Write$declared_type$ToArray(\n"
+    "  ::gxxgle::protobuf::internal::WireFormatLite::Write$declared_type$ToArray(\n"
     "    $number$, this->$name$(), target);\n");
 }
 
@@ -321,7 +321,7 @@ void StringFieldGenerator::
 GenerateByteSize(io::Printer* printer) const {
   printer->Print(variables_,
     "total_size += $tag_size$ +\n"
-    "  ::google::protobuf::internal::WireFormatLite::$declared_type$Size(\n"
+    "  ::gxxgle::protobuf::internal::WireFormatLite::$declared_type$Size(\n"
     "    this->$name$());\n");
 }
 
@@ -345,7 +345,7 @@ GenerateInlineAccessorDefinitions(io::Printer* printer) const {
     "  }\n");
   if (descriptor_->default_value_string().empty()) {
     printer->Print(variables_,
-      "  return ::google::protobuf::internal::GetEmptyStringAlreadyInited();\n");
+      "  return ::gxxgle::protobuf::internal::GetEmptyStringAlreadyInited();\n");
   } else {
     printer->Print(variables_,
       "  return *$default_variable$;\n");
@@ -458,7 +458,7 @@ RepeatedStringFieldGenerator::~RepeatedStringFieldGenerator() {}
 void RepeatedStringFieldGenerator::
 GeneratePrivateMembers(io::Printer* printer) const {
   printer->Print(variables_,
-    "::google::protobuf::RepeatedPtrField< ::std::string> $name$_;\n");
+    "::gxxgle::protobuf::RepeatedPtrField< ::std::string> $name$_;\n");
 }
 
 void RepeatedStringFieldGenerator::
@@ -487,9 +487,9 @@ GenerateAccessorDeclarations(io::Printer* printer) const {
                  "$deprecation$;\n");
 
   printer->Print(variables_,
-    "inline const ::google::protobuf::RepeatedPtrField< ::std::string>& $name$() const"
+    "inline const ::gxxgle::protobuf::RepeatedPtrField< ::std::string>& $name$() const"
                  "$deprecation$;\n"
-    "inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_$name$()"
+    "inline ::gxxgle::protobuf::RepeatedPtrField< ::std::string>* mutable_$name$()"
                  "$deprecation$;\n");
 
   if (descriptor_->options().ctype() != FieldOptions::STRING) {
@@ -542,12 +542,12 @@ GenerateInlineAccessorDefinitions(io::Printer* printer) const {
     "  // @@protoc_insertion_point(field_add_pointer:$full_name$)\n"
     "}\n");
   printer->Print(variables_,
-    "inline const ::google::protobuf::RepeatedPtrField< ::std::string>&\n"
+    "inline const ::gxxgle::protobuf::RepeatedPtrField< ::std::string>&\n"
     "$classname$::$name$() const {\n"
     "  // @@protoc_insertion_point(field_list:$full_name$)\n"
     "  return $name$_;\n"
     "}\n"
-    "inline ::google::protobuf::RepeatedPtrField< ::std::string>*\n"
+    "inline ::gxxgle::protobuf::RepeatedPtrField< ::std::string>*\n"
     "$classname$::mutable_$name$() {\n"
     "  // @@protoc_insertion_point(field_mutable_list:$full_name$)\n"
     "  return &$name$_;\n"
@@ -577,15 +577,15 @@ GenerateConstructorCode(io::Printer* printer) const {
 void RepeatedStringFieldGenerator::
 GenerateMergeFromCodedStream(io::Printer* printer) const {
   printer->Print(variables_,
-    "DO_(::google::protobuf::internal::WireFormatLite::Read$declared_type$(\n"
+    "DO_(::gxxgle::protobuf::internal::WireFormatLite::Read$declared_type$(\n"
     "      input, this->add_$name$()));\n");
   if (HasUtf8Verification(descriptor_->file()) &&
       descriptor_->type() == FieldDescriptor::TYPE_STRING) {
     printer->Print(variables_,
-      "::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
+      "::gxxgle::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
       "  this->$name$(this->$name$_size() - 1).data(),\n"
       "  this->$name$(this->$name$_size() - 1).length(),\n"
-      "  ::google::protobuf::internal::WireFormat::PARSE,\n"
+      "  ::gxxgle::protobuf::internal::WireFormat::PARSE,\n"
       "  \"$name$\");\n");
   }
 }
@@ -597,13 +597,13 @@ GenerateSerializeWithCachedSizes(io::Printer* printer) const {
   if (HasUtf8Verification(descriptor_->file()) &&
       descriptor_->type() == FieldDescriptor::TYPE_STRING) {
     printer->Print(variables_,
-      "::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
+      "::gxxgle::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
       "  this->$name$(i).data(), this->$name$(i).length(),\n"
-      "  ::google::protobuf::internal::WireFormat::SERIALIZE,\n"
+      "  ::gxxgle::protobuf::internal::WireFormat::SERIALIZE,\n"
       "  \"$name$\");\n");
   }
   printer->Print(variables_,
-    "  ::google::protobuf::internal::WireFormatLite::Write$declared_type$(\n"
+    "  ::gxxgle::protobuf::internal::WireFormatLite::Write$declared_type$(\n"
     "    $number$, this->$name$(i), output);\n"
     "}\n");
 }
@@ -615,13 +615,13 @@ GenerateSerializeWithCachedSizesToArray(io::Printer* printer) const {
   if (HasUtf8Verification(descriptor_->file()) &&
       descriptor_->type() == FieldDescriptor::TYPE_STRING) {
     printer->Print(variables_,
-      "  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
+      "  ::gxxgle::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
       "    this->$name$(i).data(), this->$name$(i).length(),\n"
-      "    ::google::protobuf::internal::WireFormat::SERIALIZE,\n"
+      "    ::gxxgle::protobuf::internal::WireFormat::SERIALIZE,\n"
       "    \"$name$\");\n");
   }
   printer->Print(variables_,
-    "  target = ::google::protobuf::internal::WireFormatLite::\n"
+    "  target = ::gxxgle::protobuf::internal::WireFormatLite::\n"
     "    Write$declared_type$ToArray($number$, this->$name$(i), target);\n"
     "}\n");
 }
@@ -631,7 +631,7 @@ GenerateByteSize(io::Printer* printer) const {
   printer->Print(variables_,
     "total_size += $tag_size$ * this->$name$_size();\n"
     "for (int i = 0; i < this->$name$_size(); i++) {\n"
-    "  total_size += ::google::protobuf::internal::WireFormatLite::$declared_type$Size(\n"
+    "  total_size += ::gxxgle::protobuf::internal::WireFormatLite::$declared_type$Size(\n"
     "    this->$name$(i));\n"
     "}\n");
 }

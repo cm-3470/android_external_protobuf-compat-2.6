@@ -41,7 +41,7 @@
 #include <vector>
 #include <google/protobuf/stubs/common.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace io {
 
@@ -398,5 +398,5 @@ inline void Tokenizer::ParseString(const string& text, string* output) {
 }  // namespace io
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_IO_TOKENIZER_H__

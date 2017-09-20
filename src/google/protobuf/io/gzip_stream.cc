@@ -40,7 +40,7 @@
 
 #include <google/protobuf/stubs/common.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace io {
 
@@ -321,6 +321,6 @@ bool GzipOutputStream::Close() {
 
 }  // namespace io
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle
 
 #endif  // HAVE_ZLIB

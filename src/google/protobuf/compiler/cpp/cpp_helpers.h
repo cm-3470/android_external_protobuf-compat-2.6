@@ -92,7 +92,7 @@ string FieldMessageTypeName(const FieldDescriptor* field);
 // Strips ".proto" or ".protodevel" from the end of a filename.
 string StripProto(const string& filename);
 
-// Get the C++ type name for a primitive type (e.g. "double", "::google::protobuf::int32", etc.).
+// Get the C++ type name for a primitive type (e.g. "double", "::gxxgle::protobuf::int32", etc.).
 // Note:  non-built-in type names will be qualified, meaning they will start
 // with a ::.  If you are using the type as a template parameter, you will
 // need to insure there is a space between the < and the ::, because the

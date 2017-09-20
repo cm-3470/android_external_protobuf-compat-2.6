@@ -48,7 +48,7 @@
 #include <gtest/gtest.h>
 #include <google/protobuf/stubs/stl_util.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 using internal::WireFormat;
@@ -596,4 +596,4 @@ TEST_F(UnknownFieldSetTest, DeleteByNumber) {
 }  // namespace
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

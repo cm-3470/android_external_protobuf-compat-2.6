@@ -72,7 +72,7 @@ class MessageGenerator {
   void GenerateEnumDefinitions(io::Printer* printer);
 
   // Generate specializations of GetEnumDescriptor<MyEnum>().
-  // Precondition: in ::google::protobuf namespace.
+  // Precondition: in ::gxxgle::protobuf namespace.
   void GenerateGetEnumDescriptorSpecializations(io::Printer* printer);
 
   // Generate definitions for this class and all its nested types.

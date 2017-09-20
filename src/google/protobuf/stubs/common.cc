@@ -48,7 +48,7 @@
 #error "No suitable threading library available."
 #endif
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 namespace internal {
@@ -392,4 +392,4 @@ const char* FatalException::what() const throw() {
 #endif
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

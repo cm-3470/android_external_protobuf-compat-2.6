@@ -37,7 +37,7 @@
 
 #include <google/protobuf/unittest_lite.pb.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 namespace unittest = protobuf_unittest;
@@ -97,5 +97,5 @@ class TestUtilLite {
 
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_TEST_UTIL_LITE_H__

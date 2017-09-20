@@ -44,7 +44,7 @@
 #include <google/protobuf/stubs/common.h>
 #include <google/protobuf/descriptor.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 // Defined in this file.
@@ -365,5 +365,5 @@ class LIBPROTOBUF_EXPORT MergedDescriptorDatabase : public DescriptorDatabase {
 
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_DESCRIPTOR_DATABASE_H__

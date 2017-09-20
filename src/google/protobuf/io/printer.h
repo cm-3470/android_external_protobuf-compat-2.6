@@ -41,7 +41,7 @@
 #include <map>
 #include <google/protobuf/stubs/common.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace io {
 
@@ -132,5 +132,5 @@ class LIBPROTOBUF_EXPORT Printer {
 }  // namespace io
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_IO_PRINTER_H__

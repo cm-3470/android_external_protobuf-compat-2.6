@@ -52,7 +52,7 @@
 #include <google/protobuf/io/zero_copy_stream_impl.h>
 #include <google/protobuf/stubs/strutil.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace compiler {
 
@@ -477,4 +477,4 @@ io::ZeroCopyInputStream* DiskSourceTree::OpenDiskFile(
 
 }  // namespace compiler
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

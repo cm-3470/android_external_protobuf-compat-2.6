@@ -32,11 +32,11 @@
 //  Based on original Protocol Buffers design by
 //  Sanjay Ghemawat, Jeff Dean, and others.
 //
-// This file exists solely to document the google::protobuf namespace.
+// This file exists solely to document the gxxgle::protobuf namespace.
 // It is not compiled into anything, but it may be read by an automated
 // documentation generator.
 
-namespace google {
+namespace gxxgle {
 
 // Core components of the Protocol Buffers runtime library.
 //
@@ -61,4 +61,4 @@ namespace google {
 // the object behind the scenes -- e.g., to cache results -- but in these cases
 // mutex locking is used to make the access thread-safe.
 namespace protobuf {}
-}  // namespace google
+}  // namespace gxxgle

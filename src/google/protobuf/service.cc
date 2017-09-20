@@ -34,7 +34,7 @@
 
 #include <google/protobuf/service.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 Service::~Service() {}
@@ -43,4 +43,4 @@ RpcController::~RpcController() {}
 
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle

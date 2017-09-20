@@ -43,7 +43,7 @@
 #include <vector>
 #include <google/protobuf/stubs/common.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
   namespace io {
     class CodedInputStream;         // coded_stream.h
@@ -314,5 +314,5 @@ inline void UnknownField::SetType(Type type) {
 
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_UNKNOWN_FIELD_SET_H__

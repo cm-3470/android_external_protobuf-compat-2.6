@@ -46,7 +46,7 @@
 #include <google/protobuf/testing/googletest.h>
 #include <gtest/gtest.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace io {
 namespace {
@@ -996,4 +996,4 @@ TEST_1D(TokenizerTest, BackUpOnDestruction, kBlockSizes) {
 }  // namespace
 }  // namespace io
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

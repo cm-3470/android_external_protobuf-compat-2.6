@@ -32,11 +32,11 @@
 //  Based on original Protocol Buffers design by
 //  Sanjay Ghemawat, Jeff Dean, and others.
 //
-// This file exists solely to document the google::protobuf::compiler namespace.
+// This file exists solely to document the gxxgle::protobuf::compiler namespace.
 // It is not compiled into anything, but it may be read by an automated
 // documentation generator.
 
-namespace google {
+namespace gxxgle {
 
 namespace protobuf {
 
@@ -61,4 +61,4 @@ namespace protobuf {
 namespace compiler {}
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

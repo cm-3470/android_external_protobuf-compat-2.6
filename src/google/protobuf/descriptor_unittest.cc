@@ -52,7 +52,7 @@
 #include <google/protobuf/testing/googletest.h>
 #include <gtest/gtest.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 // Can't use an anonymous namespace here due to brokenness of Tru64 compiler.
@@ -5498,4 +5498,4 @@ TEST_F(CopySourceCodeInfoToTest, CopySourceCodeInfoTo) {
 
 }  // namespace descriptor_unittest
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

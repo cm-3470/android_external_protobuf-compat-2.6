@@ -126,17 +126,17 @@ void EnumGenerator::GenerateDefinition(io::Printer* printer) {
 
   if (HasDescriptorMethods(descriptor_->file())) {
     printer->Print(vars,
-      "$dllexport$const ::google::protobuf::EnumDescriptor* $classname$_descriptor();\n");
+      "$dllexport$const ::gxxgle::protobuf::EnumDescriptor* $classname$_descriptor();\n");
     // The _Name and _Parse methods
     printer->Print(vars,
       "inline const ::std::string& $classname$_Name($classname$ value) {\n"
-      "  return ::google::protobuf::internal::NameOfEnum(\n"
+      "  return ::gxxgle::protobuf::internal::NameOfEnum(\n"
       "    $classname$_descriptor(), value);\n"
       "}\n");
     printer->Print(vars,
       "inline bool $classname$_Parse(\n"
       "    const ::std::string& name, $classname$* value) {\n"
-      "  return ::google::protobuf::internal::ParseNamedEnum<$classname$>(\n"
+      "  return ::gxxgle::protobuf::internal::ParseNamedEnum<$classname$>(\n"
       "    $classname$_descriptor(), name, value);\n"
       "}\n");
   }
@@ -146,7 +146,7 @@ void EnumGenerator::
 GenerateGetEnumDescriptorSpecializations(io::Printer* printer) {
   if (HasDescriptorMethods(descriptor_->file())) {
     printer->Print(
-      "template <> struct is_proto_enum< $classname$> : ::google::protobuf::internal::true_type {};\n"
+      "template <> struct is_proto_enum< $classname$> : ::gxxgle::protobuf::internal::true_type {};\n"
       "template <>\n"
       "inline const EnumDescriptor* GetEnumDescriptor< $classname$>() {\n"
       "  return $classname$_descriptor();\n"
@@ -183,7 +183,7 @@ void EnumGenerator::GenerateSymbolImports(io::Printer* printer) {
 
   if (HasDescriptorMethods(descriptor_->file())) {
     printer->Print(vars,
-      "static inline const ::google::protobuf::EnumDescriptor*\n"
+      "static inline const ::gxxgle::protobuf::EnumDescriptor*\n"
       "$nested_name$_descriptor() {\n"
       "  return $classname$_descriptor();\n"
       "}\n");
@@ -221,7 +221,7 @@ void EnumGenerator::GenerateMethods(io::Printer* printer) {
 
   if (HasDescriptorMethods(descriptor_->file())) {
     printer->Print(vars,
-      "const ::google::protobuf::EnumDescriptor* $classname$_descriptor() {\n"
+      "const ::gxxgle::protobuf::EnumDescriptor* $classname$_descriptor() {\n"
       "  protobuf_AssignDescriptorsOnce();\n"
       "  return $classname$_descriptor_;\n"
       "}\n");

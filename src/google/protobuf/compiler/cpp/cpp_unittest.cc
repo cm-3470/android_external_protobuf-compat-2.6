@@ -99,7 +99,7 @@ class MockErrorCollector : public MultiFileErrorCollector {
 #ifndef PROTOBUF_TEST_NO_DESCRIPTORS
 
 // Test that generated code has proper descriptors:
-// Parse a descriptor directly (using google::protobuf::compiler::Importer) and
+// Parse a descriptor directly (using gxxgle::protobuf::compiler::Importer) and
 // compare it to the one that was produced by generated code.
 TEST(GeneratedDescriptorTest, IdenticalDescriptors) {
   const FileDescriptor* generated_descriptor =

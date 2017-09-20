@@ -36,7 +36,7 @@
 #include <gtest/gtest.h>
 #include <locale.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace {
 
@@ -70,4 +70,4 @@ TEST(StringUtilityTest, ImmuneToLocales) {
 
 }  // anonymous namespace
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

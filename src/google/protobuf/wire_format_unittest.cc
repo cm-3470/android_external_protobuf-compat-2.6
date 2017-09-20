@@ -46,7 +46,7 @@
 #include <gtest/gtest.h>
 #include <google/protobuf/stubs/stl_util.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace internal {
 namespace {
@@ -741,8 +741,8 @@ TEST(WireFormatTest, RepeatedScalarsDifferentTagSizes) {
   }
 
   // Make sure that we have a variety of tag sizes.
-  const google::protobuf::Descriptor* desc = msg1.GetDescriptor();
-  const google::protobuf::FieldDescriptor* field;
+  const gxxgle::protobuf::Descriptor* desc = msg1.GetDescriptor();
+  const gxxgle::protobuf::FieldDescriptor* field;
   field = desc->FindFieldByName("repeated_fixed32");
   ASSERT_TRUE(field != NULL);
   ASSERT_EQ(1, WireFormat::TagSize(field->number(), field->type()));
@@ -1117,4 +1117,4 @@ TEST_F(Utf8ValidationTest, OldVerifyUTF8String) {
 }  // namespace
 }  // namespace internal
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

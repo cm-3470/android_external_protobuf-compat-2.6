@@ -68,7 +68,7 @@ void ServiceGenerator::GenerateDeclarations(io::Printer* printer) {
 
 void ServiceGenerator::GenerateInterface(io::Printer* printer) {
   printer->Print(vars_,
-    "class $dllexport$$classname$ : public ::google::protobuf::Service {\n"
+    "class $dllexport$$classname$ : public ::gxxgle::protobuf::Service {\n"
     " protected:\n"
     "  // This class should be treated as an abstract interface.\n"
     "  inline $classname$() {};\n"
@@ -80,7 +80,7 @@ void ServiceGenerator::GenerateInterface(io::Printer* printer) {
     "\n"
     "typedef $classname$_Stub Stub;\n"
     "\n"
-    "static const ::google::protobuf::ServiceDescriptor* descriptor();\n"
+    "static const ::gxxgle::protobuf::ServiceDescriptor* descriptor();\n"
     "\n");
 
   GenerateMethodSignatures(VIRTUAL, printer);
@@ -89,16 +89,16 @@ void ServiceGenerator::GenerateInterface(io::Printer* printer) {
     "\n"
     "// implements Service ----------------------------------------------\n"
     "\n"
-    "const ::google::protobuf::ServiceDescriptor* GetDescriptor();\n"
-    "void CallMethod(const ::google::protobuf::MethodDescriptor* method,\n"
-    "                ::google::protobuf::RpcController* controller,\n"
-    "                const ::google::protobuf::Message* request,\n"
-    "                ::google::protobuf::Message* response,\n"
-    "                ::google::protobuf::Closure* done);\n"
-    "const ::google::protobuf::Message& GetRequestPrototype(\n"
-    "  const ::google::protobuf::MethodDescriptor* method) const;\n"
-    "const ::google::protobuf::Message& GetResponsePrototype(\n"
-    "  const ::google::protobuf::MethodDescriptor* method) const;\n");
+    "const ::gxxgle::protobuf::ServiceDescriptor* GetDescriptor();\n"
+    "void CallMethod(const ::gxxgle::protobuf::MethodDescriptor* method,\n"
+    "                ::gxxgle::protobuf::RpcController* controller,\n"
+    "                const ::gxxgle::protobuf::Message* request,\n"
+    "                ::gxxgle::protobuf::Message* response,\n"
+    "                ::gxxgle::protobuf::Closure* done);\n"
+    "const ::gxxgle::protobuf::Message& GetRequestPrototype(\n"
+    "  const ::gxxgle::protobuf::MethodDescriptor* method) const;\n"
+    "const ::gxxgle::protobuf::Message& GetResponsePrototype(\n"
+    "  const ::gxxgle::protobuf::MethodDescriptor* method) const;\n");
 
   printer->Outdent();
   printer->Print(vars_,
@@ -117,12 +117,12 @@ void ServiceGenerator::GenerateStubDefinition(io::Printer* printer) {
   printer->Indent();
 
   printer->Print(vars_,
-    "$classname$_Stub(::google::protobuf::RpcChannel* channel);\n"
-    "$classname$_Stub(::google::protobuf::RpcChannel* channel,\n"
-    "                 ::google::protobuf::Service::ChannelOwnership ownership);\n"
+    "$classname$_Stub(::gxxgle::protobuf::RpcChannel* channel);\n"
+    "$classname$_Stub(::gxxgle::protobuf::RpcChannel* channel,\n"
+    "                 ::gxxgle::protobuf::Service::ChannelOwnership ownership);\n"
     "~$classname$_Stub();\n"
     "\n"
-    "inline ::google::protobuf::RpcChannel* channel() { return channel_; }\n"
+    "inline ::gxxgle::protobuf::RpcChannel* channel() { return channel_; }\n"
     "\n"
     "// implements $classname$ ------------------------------------------\n"
     "\n");
@@ -132,7 +132,7 @@ void ServiceGenerator::GenerateStubDefinition(io::Printer* printer) {
   printer->Outdent();
   printer->Print(vars_,
     " private:\n"
-    "  ::google::protobuf::RpcChannel* channel_;\n"
+    "  ::gxxgle::protobuf::RpcChannel* channel_;\n"
     "  bool owns_channel_;\n"
     "  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS($classname$_Stub);\n"
     "};\n"
@@ -150,10 +150,10 @@ void ServiceGenerator::GenerateMethodSignatures(
     sub_vars["virtual"] = virtual_or_non == VIRTUAL ? "virtual " : "";
 
     printer->Print(sub_vars,
-      "$virtual$void $name$(::google::protobuf::RpcController* controller,\n"
+      "$virtual$void $name$(::gxxgle::protobuf::RpcController* controller,\n"
       "                     const $input_type$* request,\n"
       "                     $output_type$* response,\n"
-      "                     ::google::protobuf::Closure* done);\n");
+      "                     ::gxxgle::protobuf::Closure* done);\n");
   }
 }
 
@@ -175,12 +175,12 @@ void ServiceGenerator::GenerateImplementation(io::Printer* printer) {
   printer->Print(vars_,
     "$classname$::~$classname$() {}\n"
     "\n"
-    "const ::google::protobuf::ServiceDescriptor* $classname$::descriptor() {\n"
+    "const ::gxxgle::protobuf::ServiceDescriptor* $classname$::descriptor() {\n"
     "  protobuf_AssignDescriptorsOnce();\n"
     "  return $classname$_descriptor_;\n"
     "}\n"
     "\n"
-    "const ::google::protobuf::ServiceDescriptor* $classname$::GetDescriptor() {\n"
+    "const ::gxxgle::protobuf::ServiceDescriptor* $classname$::GetDescriptor() {\n"
     "  protobuf_AssignDescriptorsOnce();\n"
     "  return $classname$_descriptor_;\n"
     "}\n"
@@ -194,13 +194,13 @@ void ServiceGenerator::GenerateImplementation(io::Printer* printer) {
 
   // Generate stub implementation.
   printer->Print(vars_,
-    "$classname$_Stub::$classname$_Stub(::google::protobuf::RpcChannel* channel)\n"
+    "$classname$_Stub::$classname$_Stub(::gxxgle::protobuf::RpcChannel* channel)\n"
     "  : channel_(channel), owns_channel_(false) {}\n"
     "$classname$_Stub::$classname$_Stub(\n"
-    "    ::google::protobuf::RpcChannel* channel,\n"
-    "    ::google::protobuf::Service::ChannelOwnership ownership)\n"
+    "    ::gxxgle::protobuf::RpcChannel* channel,\n"
+    "    ::gxxgle::protobuf::Service::ChannelOwnership ownership)\n"
     "  : channel_(channel),\n"
-    "    owns_channel_(ownership == ::google::protobuf::Service::STUB_OWNS_CHANNEL) {}\n"
+    "    owns_channel_(ownership == ::gxxgle::protobuf::Service::STUB_OWNS_CHANNEL) {}\n"
     "$classname$_Stub::~$classname$_Stub() {\n"
     "  if (owns_channel_) delete channel_;\n"
     "}\n"
@@ -220,10 +220,10 @@ void ServiceGenerator::GenerateNotImplementedMethods(io::Printer* printer) {
     sub_vars["output_type"] = ClassName(method->output_type(), true);
 
     printer->Print(sub_vars,
-      "void $classname$::$name$(::google::protobuf::RpcController* controller,\n"
+      "void $classname$::$name$(::gxxgle::protobuf::RpcController* controller,\n"
       "                         const $input_type$*,\n"
       "                         $output_type$*,\n"
-      "                         ::google::protobuf::Closure* done) {\n"
+      "                         ::gxxgle::protobuf::Closure* done) {\n"
       "  controller->SetFailed(\"Method $name$() not implemented.\");\n"
       "  done->Run();\n"
       "}\n"
@@ -233,11 +233,11 @@ void ServiceGenerator::GenerateNotImplementedMethods(io::Printer* printer) {
 
 void ServiceGenerator::GenerateCallMethod(io::Printer* printer) {
   printer->Print(vars_,
-    "void $classname$::CallMethod(const ::google::protobuf::MethodDescriptor* method,\n"
-    "                             ::google::protobuf::RpcController* controller,\n"
-    "                             const ::google::protobuf::Message* request,\n"
-    "                             ::google::protobuf::Message* response,\n"
-    "                             ::google::protobuf::Closure* done) {\n"
+    "void $classname$::CallMethod(const ::gxxgle::protobuf::MethodDescriptor* method,\n"
+    "                             ::gxxgle::protobuf::RpcController* controller,\n"
+    "                             const ::gxxgle::protobuf::Message* request,\n"
+    "                             ::gxxgle::protobuf::Message* response,\n"
+    "                             ::gxxgle::protobuf::Closure* done) {\n"
     "  GOOGLE_DCHECK_EQ(method->service(), $classname$_descriptor_);\n"
     "  switch(method->index()) {\n");
 
@@ -254,8 +254,8 @@ void ServiceGenerator::GenerateCallMethod(io::Printer* printer) {
     printer->Print(sub_vars,
       "    case $index$:\n"
       "      $name$(controller,\n"
-      "             ::google::protobuf::down_cast<const $input_type$*>(request),\n"
-      "             ::google::protobuf::down_cast< $output_type$*>(response),\n"
+      "             ::gxxgle::protobuf::down_cast<const $input_type$*>(request),\n"
+      "             ::gxxgle::protobuf::down_cast< $output_type$*>(response),\n"
       "             done);\n"
       "      break;\n");
   }
@@ -273,14 +273,14 @@ void ServiceGenerator::GenerateGetPrototype(RequestOrResponse which,
                                             io::Printer* printer) {
   if (which == REQUEST) {
     printer->Print(vars_,
-      "const ::google::protobuf::Message& $classname$::GetRequestPrototype(\n");
+      "const ::gxxgle::protobuf::Message& $classname$::GetRequestPrototype(\n");
   } else {
     printer->Print(vars_,
-      "const ::google::protobuf::Message& $classname$::GetResponsePrototype(\n");
+      "const ::gxxgle::protobuf::Message& $classname$::GetResponsePrototype(\n");
   }
 
   printer->Print(vars_,
-    "    const ::google::protobuf::MethodDescriptor* method) const {\n"
+    "    const ::gxxgle::protobuf::MethodDescriptor* method) const {\n"
     "  GOOGLE_DCHECK_EQ(method->service(), descriptor());\n"
     "  switch(method->index()) {\n");
 
@@ -301,7 +301,7 @@ void ServiceGenerator::GenerateGetPrototype(RequestOrResponse which,
   printer->Print(vars_,
     "    default:\n"
     "      GOOGLE_LOG(FATAL) << \"Bad method index; this should never happen.\";\n"
-    "      return *reinterpret_cast< ::google::protobuf::Message*>(NULL);\n"
+    "      return *reinterpret_cast< ::gxxgle::protobuf::Message*>(NULL);\n"
     "  }\n"
     "}\n"
     "\n");
@@ -318,10 +318,10 @@ void ServiceGenerator::GenerateStubMethods(io::Printer* printer) {
     sub_vars["output_type"] = ClassName(method->output_type(), true);
 
     printer->Print(sub_vars,
-      "void $classname$_Stub::$name$(::google::protobuf::RpcController* controller,\n"
+      "void $classname$_Stub::$name$(::gxxgle::protobuf::RpcController* controller,\n"
       "                              const $input_type$* request,\n"
       "                              $output_type$* response,\n"
-      "                              ::google::protobuf::Closure* done) {\n"
+      "                              ::gxxgle::protobuf::Closure* done) {\n"
       "  channel_->CallMethod(descriptor()->method($index$),\n"
       "                       controller, request, response, done);\n"
       "}\n");

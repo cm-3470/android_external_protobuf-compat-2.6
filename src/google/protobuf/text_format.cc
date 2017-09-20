@@ -54,7 +54,7 @@
 #include <google/protobuf/stubs/map_util.h>
 #include <google/protobuf/stubs/stl_util.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 namespace {
@@ -1743,4 +1743,4 @@ void TextFormat::Printer::PrintUnknownFields(
 }
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

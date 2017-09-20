@@ -66,7 +66,7 @@ class EnumGenerator {
   void GenerateDefinition(io::Printer* printer);
 
   // Generate specialization of GetEnumDescriptor<MyEnum>().
-  // Precondition: in ::google::protobuf namespace.
+  // Precondition: in ::gxxgle::protobuf namespace.
   void GenerateGetEnumDescriptorSpecializations(io::Printer* printer);
 
   // For enums nested within a message, generate code to import all the enum's

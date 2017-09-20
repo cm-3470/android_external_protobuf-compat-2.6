@@ -39,7 +39,7 @@
 #include <google/protobuf/test_util.h>
 #include <gtest/gtest.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 using unittest::ForeignMessage;
@@ -192,4 +192,4 @@ TEST(RepeatedFieldReflectionTest, ExtensionFields) {
 
 }  // namespace
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

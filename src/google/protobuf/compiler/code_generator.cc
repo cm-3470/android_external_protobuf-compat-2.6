@@ -37,7 +37,7 @@
 #include <google/protobuf/stubs/common.h>
 #include <google/protobuf/stubs/strutil.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace compiler {
 
@@ -81,4 +81,4 @@ void ParseGeneratorParameter(const string& text,
 
 }  // namespace compiler
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

@@ -40,7 +40,7 @@
 #include <google/protobuf/stubs/common.h>
 #include <google/protobuf/stubs/stl_util.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace io {
 
@@ -402,4 +402,4 @@ void CopyingOutputStreamAdaptor::FreeBuffer() {
 
 }  // namespace io
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

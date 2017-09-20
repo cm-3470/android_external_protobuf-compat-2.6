@@ -46,7 +46,7 @@
 #include <google/protobuf/testing/googletest.h>
 #include <gtest/gtest.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 void TestUtil::SetAllFields(unittest::TestAllTypes* message) {
@@ -3342,4 +3342,4 @@ void TestUtil::ReflectionTester::ExpectMessagesReleasedViaReflection(
 }
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

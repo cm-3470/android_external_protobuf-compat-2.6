@@ -52,7 +52,7 @@
 #define snprintf _snprintf
 #endif
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 inline bool IsNaN(double value) {
@@ -1276,4 +1276,4 @@ string ToHex(uint64 num) {
 }
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

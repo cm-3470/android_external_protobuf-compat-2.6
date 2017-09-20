@@ -43,7 +43,7 @@
 #include <vector>
 #include <utility>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 namespace io { class ZeroCopyOutputStream; }
@@ -141,5 +141,5 @@ extern void ParseGeneratorParameter(const string&,
 }  // namespace compiler
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_COMPILER_CODE_GENERATOR_H__

@@ -42,7 +42,7 @@
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/stubs/map_util.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace internal {
 
@@ -93,7 +93,7 @@ void InitRegistry() {
 // safety.
 void Register(const MessageLite* containing_type,
               int number, ExtensionInfo info) {
-  ::google::protobuf::GoogleOnceInit(&registry_init_, &InitRegistry);
+  ::gxxgle::protobuf::GoogleOnceInit(&registry_init_, &InitRegistry);
 
   if (!InsertIfNotPresent(registry_, make_pair(containing_type, number),
                           info)) {
@@ -1660,4 +1660,4 @@ void DestroyDefaultRepeatedFields() {
 
 }  // namespace internal
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle

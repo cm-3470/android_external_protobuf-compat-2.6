@@ -45,7 +45,7 @@
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/io/tokenizer.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf { class Message; }
 
 namespace protobuf {
@@ -518,5 +518,5 @@ class LIBPROTOBUF_EXPORT SourceLocationTable {
 }  // namespace compiler
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_COMPILER_PARSER_H__

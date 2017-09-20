@@ -45,7 +45,7 @@
 #include <google/protobuf/descriptor_database.h>
 #include <google/protobuf/compiler/parser.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 namespace io { class ZeroCopyInputStream; }
@@ -313,5 +313,5 @@ class LIBPROTOBUF_EXPORT DiskSourceTree : public SourceTree {
 }  // namespace compiler
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_COMPILER_IMPORTER_H__

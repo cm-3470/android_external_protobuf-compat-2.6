@@ -51,7 +51,7 @@
 #include <google/protobuf/stubs/stl_util.h>
 
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 namespace io {
 
@@ -350,5 +350,5 @@ inline char* mutable_string_data(string* s) {
 }  // namespace io
 }  // namespace protobuf
 
-}  // namespace google
+}  // namespace gxxgle
 #endif  // GOOGLE_PROTOBUF_IO_ZERO_COPY_STREAM_IMPL_LITE_H__

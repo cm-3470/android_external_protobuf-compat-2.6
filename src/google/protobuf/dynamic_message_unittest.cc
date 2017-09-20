@@ -50,7 +50,7 @@
 #include <google/protobuf/testing/googletest.h>
 #include <gtest/gtest.h>
 
-namespace google {
+namespace gxxgle {
 namespace protobuf {
 
 class DynamicMessageTest : public testing::Test {
@@ -227,4 +227,4 @@ TEST_F(DynamicMessageTest, SpaceUsed) {
 }
 
 }  // namespace protobuf
-}  // namespace google
+}  // namespace gxxgle
