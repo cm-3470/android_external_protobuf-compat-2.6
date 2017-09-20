@@ -64,7 +64,7 @@ protobuf_cc_full_src_files := \
 # =======================================================
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := libprotobuf-cpp-full
+LOCAL_MODULE := libprotobuf-cpp-fl26
 LOCAL_MODULE_TAGS := optional
 LOCAL_CPP_EXTENSION := .cc
 LOCAL_SRC_FILES := $(protobuf_cc_full_src_files)
